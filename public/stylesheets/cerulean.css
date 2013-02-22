@@ -14,6 +14,9 @@
   *zoom: 1;
 }
 
+.worktime {
+    align: left;     
+}
 .clearfix:before,
 .clearfix:after {
   display: table;

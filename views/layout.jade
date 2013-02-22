@@ -6,6 +6,7 @@ html(lang='en')
     script(src='http://code.jquery.com/jquery.js')
     link(href="/stylesheets/cerulean.css", rel="stylesheet")
     script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/js/bootstrap.min.js")
+    script(src='/javascripts/user.js')
 
     style
       body {
@@ -26,8 +27,8 @@ html(lang='en')
               li
                 a(href='/') #{Page1}
               li
-                a(href='/about') #{Page2}
+                a(href='/'+Page2) #{Page2}
               li
-                a(href='/contact') #{Page3}
+                a(href='/'+Page3) #{Page3}
     
     block content

@@ -1,0 +1,35 @@
+div.span6
+      form.form-vertical
+        div.span2.control-group
+          h4 Tell us what you like! Kittens? Puppies? Art?
+        div.span2
+
+          div.controls
+            input.input-small(type="text",id="likeinput", placeholder="like")
+                
+        div.control-group
+          div.controls
+            a.btn.btn-primary(id='login') Add
+      div.span6(id="userlikes")
+        a.btn.span2(style="font-size:14pt") Cats
+    div.span4
+      form.form-horizontal
+        h4(style="text-align:center") Want to add a new project? 
+        div.control-group
+          label.control-label(for='inputUsername',style="font-size:14pt") Title
+          div.controls
+            input.input-small(type="text",id="projecttitle", placeholder="title")
+        div.control-group
+          label.control-label(for='inputPassword', style="font-size:14pt") Prompt
+          div.controls
+            textarea(id='inputPassword', rows="10", cols="80", placeholder="add a prompt if you'd like!")
+        //- div.control-group
+        //-   label.control-label(for='inputPassword', style="font-size:14pt") How long do you think it will be?
+        //-   div.span1
+        //-   input(name="color[]", type="checkbox", value="green") 
+        //-   | green
+
+        div.control-group
+          div.controls
+            a.btn.btn-primary(id='addProject') Start the Project!
+    

@@ -1,0 +1,32 @@
+extends layout
+
+block content
+
+  .container
+    div(id='vidpic')
+    //- h3 #{ptitle}
+    //- textarea.span6(id='prompt', rows="5", cols="80") #{prompt}
+    //- textarea.span6(id='work', rows="40", cols="200") #{work}
+    div.row-fluid(class="worktime", align="left", style="display:inline-block")
+      form.form-vertical
+        div.row-fluid.control-group
+          div.row-fluid.controls
+            h3 #{ptitle}
+            a.btn.btn-primary(id='buypic', style="display:inline-block") Get a Picture! 100pts
+                a.btn.btn-primary(id='buyvid', style="display:inline-block") Get a video! 500pts
+
+            h4(id='wordcount', style="display:inline-block") Points:
+
+                  
+        div.control-group
+          div.controls
+            textarea.span6(id='prompt', style="font-size:12pt",rows="5", cols="80") #{prompt}
+           
+        div.control-group
+          p(style="display:inline-block", id='save') Saved
+          div.controls
+
+            textarea.span6(id='work', style="font-size:12pt", rows="40", cols="200") #{work}
+    div.span3(style="display:inline-block")
+        h3(style="display:inline-block") #{ptitle}
+        script(src='/javascripts/project.js')

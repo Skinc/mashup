@@ -9,13 +9,13 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , mongoose = require('mongoose')
-  //, mainPage = require("./routes/mainPage")
+  , mainpage = require("./routes/mainpage")
   , Facebook = require('facebook-node-sdk');
 
 var app = express();
 app.configure(function(){
   mongoose.connect(process.env.MONGOLAB_URI || 'localhost/mashup');
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 5000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -34,11 +34,17 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-app.get('/', routes.index);
+app.get('/', mainpage.mainpage);
 app.get('/users', user.list);
+app.get('/login', routes.login);
 app.get('/about', routes.about);
 app.get('/contact', routes.contact);
-
+app.post('/signin', mainpage.signin)
+app.post('/addlike', mainpage.addlike)
+app.get('/info', mainpage.infor)
+app.get('/project', mainpage.project)
+app.get('/vid', mainpage.vid)
+app.get('/Projects', mainpage.project)
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
