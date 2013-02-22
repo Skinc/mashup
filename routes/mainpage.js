@@ -80,5 +80,5 @@ exports.project = function(req, res){
 
 exports.vid = function(req, res){
     console.log("here vid")
-    res.send('<iframe width="560" height="315" src="http://www.youtube.com/embed/VF9-sEbqDvU" frameborder="0" allowfullscreen></iframe>')
+    res.send('<iframe width="560" height="315" src="http://www.youtube.com/embed/VF9-sEbqDvU?rel=0" frameborder="0" allowfullscreen></iframe>')
 }
