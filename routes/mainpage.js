@@ -47,10 +47,10 @@ exports.mainpage = function(req, res){
 exports.addlike = function(req, res){
     console.log(req.body.newlike)
     user.find({Name:req.body.user}).exec(function(err, users) {
-        console.log(users[0].likes)
-        var mlist =users[0].likes
-        mlist.push(req.body.newlike)
-        users[0].likes = mlist
+        // console.log(users[0].likes)
+        // var mlist =users[0].likes
+        // mlist.push(req.body.newlike)
+        // users[0].likes = mlist
         console.log("Got here")
         res.redirect("/info")
     })
