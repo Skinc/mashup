@@ -2,7 +2,6 @@ $(function(){
     
     $("#login").click( function (evt) {
 
-        console.log($("#inputUsername")[0].value)
         $.post("/signin", {inputUsername:$("#inputUsername")[0].value}, function(data) {
             $("#loginjade").remove()
 
@@ -13,8 +12,6 @@ $(function(){
 
 
     $("#liked").on( 'click',function (evt) {
-        console.log("Start")
-        console.log($("#likeinput")[0].value)
         $.post("/addlike", {newlike:$("#likeinput")[0].value})
         $("#userlikes").append('<a class="btn span2" style="font-size:14pt"> '+ $("#likeinput")[0].value + '</a>')
         $("#likeinput")[0].value =""
@@ -30,11 +27,6 @@ $(function(){
         }
 
     })
-    
-
-
-
-
-    
+ 
     
 })

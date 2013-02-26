@@ -1,31 +1,23 @@
 $(function(){
-    var PUPPIES = [];
-    // scrape the top of r/aww
-    function getPuppies(){
+
+    var Pics = [];
+    function getPics(){
     $.get('http://www.reddit.com/r/husky/.json?jsonp=?', function (data) {
-        PUPPIES = data.data.children.map(function(entry) {
+        Pics = data.data.children.map(function(entry) {
             return entry.data.url;
 
              });
-            $('#img').attr('src', PUPPIES[Math.floor(Math.random()*PUPPIES.length)]);
+            $('#img').attr('src', Pics[Math.floor(Math.random()*Pics.length)]);
         }, 'json');
     }
 
 
+    // Had Bugs with get pics and get vids so it is nowhere near fully implemented. :-(
     $("#buypic").click( function (evt) {
-
-   
-        console.log(total)
         if (total >100){
             spent= spent +100
-            $.get('http://www.reddit.com/r/husky/.json?jsonp=?', function (data) {
-                getPuppies()
-                console.log(PUPPIES)
-            })
-
-            
-  
-
+            getPics()
+            console.log(PUPPIES)
         } 
 
     })
@@ -41,12 +33,7 @@ $(function(){
                 $("#vidpic").append(data)
             })
         } 
-        // $.post("/signin", {inputUsername:$("#inputUsername")[0].value}, function(data) {
-        //     $("#loginjade").remove()
-
-        //     $("#page").append(data)
-        // })
-
+  
     })
     var total = 0
     var spent =0 
@@ -55,10 +42,7 @@ $(function(){
          total = $('#work')[0].value.split(" ").length - spent
          $('#wordcount').html("<h4 style='display:inline-block' id='wordcount'>  Points:"+ total +" </h4>")
         console.log($('#work')[0].value.split(" ").length-spent)
-        // $.post("/save", function(data) {
-        //     $("#twitstream").remove()
-        //     $("#viewtwit").append(data)
-        // }); 
+        
     };
     setInterval(wordcount, 2000);
 })

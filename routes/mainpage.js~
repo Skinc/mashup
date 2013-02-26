@@ -18,15 +18,16 @@ exports.signin = function(req, res){
             console.log("Added")
             res.redirect("/info") 
 
-             
+             // res.render('infopartial', {name: req.body.user, likes:[], title: 'Express', Page1: 'Welcome ' + req.body.user +"!" , Page2: 'Projects', Page3:'Your info' })
         }
         else{
             if (users[0].projects.length == 0){
-                res.redirect("/info")      
+                res.redirect("/info")
+                // res.render('infopartial', {name: req.body.user, likes:users[0].likes, title: 'Express', Page1: 'Welcome ' + req.body.user +"!" , Page2: 'Projects', Page3:'Your info' })       
             } 
             else{
                 res.redirect("/info")
-                          
+                // res.render('project', {name: req.body.user, ptitle: String, prompt: String, work: String, Points:Number, title: 'Express', Page1: 'Welcome ' + req.body.user +"!" , Page2: 'Projects', Page3:'Your info' })           
             }
 
         }
